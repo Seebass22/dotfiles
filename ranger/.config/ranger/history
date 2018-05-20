@@ -1,0 +1,48 @@
+rename Landscape
+search w
+search M
+open_with 2
+search comfy
+search comf
+search new
+open_with vim
+open_with pager
+search Te
+open_with urxvt
+search tit
+search ha
+help v
+rename epslatex.pdf
+open_with nvim
+search biblatex
+search vib
+search vi
+mkdir Info
+search linux
+rename adapta-gtk-theme
+search latex
+mkdir backuptest
+mv % newvimnotes
+set show_hidden true
+echo
+echo yeah
+open_with 
+rename
+bulkrename
+mkdir 
+mkdir examples
+search Dow
+!gedit results.txt
+open_with gedit
+bulkrename 
+search Doc
+search Ro
+mkdir
+mkdir vorgabe
+unziphh
+
+delete
+open_with firefox
+open_with
+search wal
+search wall
