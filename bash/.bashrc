@@ -168,7 +168,6 @@ alias showfilesize='~/bashscripts/showfilesize.sh'
 alias showip='~/bashscripts/showip.sh'
 alias cheat='~/bashscripts/cheat.sh'
 alias info='info --vi-keys'
-alias ha3='cd Documents/Robotik/ha3'
 alias pipes='~/useless\ stuff/pipes.sh/pipes.sh'
 alias vnrc='nvim -u NORC'
 
