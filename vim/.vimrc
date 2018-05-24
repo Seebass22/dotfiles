@@ -20,6 +20,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'machakann/vim-highlightedyank'
 
 Plugin 'tpope/vim-fugitive'
+
+Plugin 'PotatoesMaster/i3-vim-syntax'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
