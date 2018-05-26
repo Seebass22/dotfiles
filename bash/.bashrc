@@ -170,6 +170,9 @@ alias cheat='~/bashscripts/cheat.sh'
 alias info='info --vi-keys'
 alias pipes='~/useless\ stuff/pipes.sh/pipes.sh'
 alias vnrc='nvim -u NORC'
+alias jump='cd "$(cat ~/.jump)"'
+alias jtemp='cd "$(cat ~/.jump2)"'
+alias gj='echo $(pwd -P) > ~/.jump'
 
 #vim intead of neovim for cool retro term
 case "$TERM" in
