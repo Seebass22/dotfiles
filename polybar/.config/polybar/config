@@ -8,15 +8,26 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:color0:#222}
-;background = #00000000
+;background = ${xrdb:color0:#222}
+;;background = #00000000
 background-alt = #444
+;foreground = ${xrdb:color7:#222}
+;;foreground = #ccffffff
+;foreground-alt = #555
+;;foreground-alt = ${xrdb:color11:#222}
+;;primary = #ffb52a
+;;secondary = #e60053
+;;alert = #bd2c40
+;primary = #ffb52a
+;secondary = ${xrdb:color1:#222}
+;alert = ${xrdb:color5:#222}
+
+background = ${xrdb:color0:#222}
 foreground = ${xrdb:color7:#222}
-;foreground = #ccffffff
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -33,7 +44,7 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-border-size = 4
+border-size = 2
 border-color = #00000000
 
 padding-left = 0
@@ -48,7 +59,8 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -177,7 +189,9 @@ bar-indicator-foreground = #ff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+;bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${xrdb:color13:#222}
+
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -192,7 +206,8 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+;format-underline = #f90000
+format-underline = ${xrdb:color14:#222}
 label = %percentage:2%%
 
 [module/memory]
@@ -200,7 +215,8 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+;format-underline = #4bffdc
+format-underline = ${xrdb:color12:#222}
 label = %percentage_used%%
 
 [module/wlan]
@@ -209,7 +225,8 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+;format-connected-underline = #9f78e1
+format-connected-underline = ${xrdb:color13:#222}
 label-connected = %essid%
 
 format-disconnected =
@@ -253,7 +270,9 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+;format-underline = #0a6cf5
+format-underline = ${xrdb:color6:#222}
+
 
 label = %date% %time%
 
@@ -262,6 +281,7 @@ type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL
+;label-volume-foreground = ${root.foreground}
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
@@ -269,13 +289,21 @@ format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+;bar-volume-foreground-0 = #55aa55
+;bar-volume-foreground-1 = #55aa55
+;bar-volume-foreground-2 = #55aa55
+;bar-volume-foreground-3 = #55aa55
+;bar-volume-foreground-4 = #55aa55
+;bar-volume-foreground-5 = #f5a70a
+;bar-volume-foreground-6 = #ff5555
+
+bar-volume-foreground-0 = ${xrdb:color2:#222}
+bar-volume-foreground-1 = ${xrdb:color2:#222}
+bar-volume-foreground-2 = ${xrdb:color2:#222}
+bar-volume-foreground-3 = ${xrdb:color2:#222}
+bar-volume-foreground-4 = ${xrdb:color2:#222}
+bar-volume-foreground-5 = ${xrdb:color3:#222}
+bar-volume-foreground-6 = ${xrdb:color1:#222}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
@@ -292,7 +320,9 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+;format-charging-underline = #ffb52a
+format-charging-underline = ${xrdb:color11:#222}
+
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -318,7 +348,9 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+;format-underline = #f50a4d
+format-underline = ${xrdb:color9:#222}
+
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
