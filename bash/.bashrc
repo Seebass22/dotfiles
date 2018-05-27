@@ -139,7 +139,8 @@ fi
 # Import colorscheme from 'wal'
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(wal -r &)
+#(wal -r &) #old
+(cat ~/.cache/wal/sequences &)
 
 # If the command above doesn't work,
 # try this alternative.
@@ -149,6 +150,8 @@ fi
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 #export GEM_PATH=$HOME/.gem
+
+export PATH="${PATH}:${HOME}/.local/bin/"
 
 export EDITOR=nvim
 #VISUAL=vim
