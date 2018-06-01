@@ -248,6 +248,7 @@ bindsym Mod1+shift+x exec bash ~/.xlock/lockscript.sh
 
 # take a screenshot with gnome-screenshot
 bindsym Print exec gnome-screenshot
+bindsym Print exec nougat -csf
 
 #scrot for screenshots
 # fullscreen
