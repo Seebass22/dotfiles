@@ -176,6 +176,10 @@ alias vnrc='nvim -u NORC'
 alias jump='cd "$(cat ~/.jump)"'
 alias jtemp='cd "$(cat ~/.jump2)"'
 alias gj='echo $(pwd -P) > ~/.jump'
+alias n='ncmpcpp'
+alias quiz='nvim -R ~/Documents/C/Quiz/quiz.c'
+alias themes='~/bashscripts/walthemes.sh'
+alias chtheme='~/bashscripts/chtheme.sh'
 
 #vim intead of neovim for cool retro term
 case "$TERM" in
