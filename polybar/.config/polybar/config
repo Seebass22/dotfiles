@@ -32,7 +32,7 @@ alert = ${xrdb:color3:#222}
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 16
+height = 18
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
@@ -41,19 +41,21 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 2
+line-size = 1
 line-color = #f00
 
-border-size = 2
+border-size = 1
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+#font-0 = scientifica:pixelsize=11;1
+font-0 = curie:pixelsize=12;1
+#font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
@@ -319,7 +321,7 @@ battery = BAT1
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <animation-charging> <label-charging> (charging)
 ;format-charging-underline = #ffb52a
 format-charging-underline = ${xrdb:color11:#222}
 
