@@ -109,5 +109,6 @@ endif
 
 "bind to remove trailing spaces after lines (do not use on vimrc)
 "nnoremap <F5> :%s/\s\+$//e
+
 "inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 nnoremap <Space><space> /<++><Enter>"_c4l
