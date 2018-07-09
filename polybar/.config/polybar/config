@@ -61,8 +61,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
 modules-center = mpd
-;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = ssh-info weather xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -82,6 +81,18 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+;;; USER MODULES START HERE ;;;
+[module/ssh-info]
+type = custom/script
+exec = ~/.config/polybar/userscripts/info-ssh.sh
+interval = 5
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/userscripts/weather.sh
+interval = 3600
+;;; END USER MODULES END HERE ;;;
 
 [module/xwindow]
 type = internal/xwindow
