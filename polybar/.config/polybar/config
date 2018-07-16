@@ -91,7 +91,7 @@ interval = 5
 [module/weather]
 type = custom/script
 exec = ~/.config/polybar/userscripts/weather.sh
-interval = 3600
+interval = 7200
 ;;; END USER MODULES END HERE ;;;
 
 [module/xwindow]

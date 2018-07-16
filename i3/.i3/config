@@ -51,17 +51,17 @@ bindsym Mod1+d exec rofi -modi drun -show drun
 # installed.
 # bindsym Mod1+d exec --no-startup-id i3-dmenu-desktop
 
-# change focus
+## change focus
 bindsym Mod1+$left focus left
 bindsym Mod1+$down focus down
 bindsym Mod1+$up focus up
 bindsym Mod1+$right focus right
 
-# alternatively, you can use the cursor keys:
-bindsym Mod1+Left focus left
-bindsym Mod1+Down focus down
-bindsym Mod1+Up focus up
-bindsym Mod1+Right focus right
+## alternatively, you can use the cursor keys:
+#bindsym Mod1+Left focus left
+bindsym Mod1+Down exec pactl set-sink-volume 3 -5%
+bindsym Mod1+Up exec pactl set-sink-volume 3 +5%
+#bindsym Mod1+Right focus right
 
 # move focused window
 bindsym Mod1+Shift+$left move left
@@ -97,9 +97,11 @@ bindsym Mod1+space focus mode_toggle
 
 # focus the parent container
 #bindsym Mod1+a focus parent
+#bindsym Mod1+p focus parent
 
 # focus the child container
 #bindsym Mod1+d focus child
+#bindsym Mod1+n focus child
 
 # move the currently focused window to the scratchpad
 bindsym Mod1+Shift+minus move scratchpad
@@ -165,7 +167,7 @@ bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #}                                                                      #
 #                                                                       #
 #bindsym Mod1+r mode "resize"                                           #
-                                                                        
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
@@ -183,9 +185,11 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Please remove the following exec line: (REMOVED)
 #######################################################################
 #new things begin here :)
+
 exec no-startup-id compton
 exec ~/.fehbg &
 exec wal -R
+#smart_borders on
 
 #required for gaps
 for_window [class="^.*"] border pixel 0
@@ -230,7 +234,7 @@ bindsym XF86AudioMute exec $HOME/.config/.otherscripts/mutetoggle.sh
 # Screen brightness controls
 # increase screen brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
- 
+
 # decrease screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
@@ -248,8 +252,12 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym Mod1+shift+x exec bash ~/.xlock/lockscript.sh
 
 # take a screenshot with gnome-screenshot
-bindsym Print exec gnome-screenshot
+#bindsym Print exec gnome-screenshot
 bindsym Print exec nougat -csf
+#bindsym Print exec nougat -ctsf
+#bindsym Print+Shift exec nougat -f
+bindsym Mod1+b exec nougat -f
+#bindsym Mod1+Shift+b exec scrot -s
 
 #scrot for screenshots
 # fullscreen
@@ -263,9 +271,9 @@ bindsym Print exec nougat -csf
 #for_window [instance="math"] floating enable
 #for_window [instance="math"] move scratchpad
 #for_window [instance="math"] reize set 800 300
-##for_window [instance="math"] border pixel 5
+##for_window [instance="math"] border pixel 0
 ##exec --no-startup-id urxvt -name math -fn "xft:Bitstream Vera Sans Mono:pixelsize=24" -e R -q
-#exec --no-startup-id urxvt -name math -fn "xft:Bitstream Vera Sans Mono:pixelsize=24"
+#exec --no-startup-id urxvt -name math -fn "xft:Bitstream Vera Sans Mono:pixelsize=23"
 ##bindsym Mod1+a [instance="math"] scratchpad show; [instance="math"] move position center
 #
 #for_window [instance="dropdown"] floating enable
@@ -273,4 +281,25 @@ bindsym Print exec nougat -csf
 #for_window [instance="dropdown"] reize set 625 400
 ##for_window [instance="dropdown"] border pixel 5
 
-#for_window [workspace="9"] floating enable
+for_window [workspace="9"] floating enable
+
+##new
+#client.focused          $darkgray $darkgray #FFFFFF   #333333
+##client.focused_inactive $darkgray $darkgray #FFFFFF   #0e0f10
+#client.focused_inactive        $black    $black    #FFFFFF   #0e0f10
+#client.unfocused        $black    $black    #FFFFFF   #0e0f10
+
+#new
+client.focused          $black    $black    #FFFFFF   #0e0f10
+#client.focused_inactive $darkgray $darkgray #FFFFFF   #0e0f10
+client.focused_inactive        $darkgray $darkgray #FFFFFF   #333333
+client.unfocused        $darkgray $darkgray #FFFFFF   #333333
+
+set $lightgray #AAAAAA
+set $gray      #484848
+set $gray2     #757575
+set $darkgray  #333333
+set $black     #0e0f10
+set $white     #C5C8C6
+set $red       #FF0000
+set $blue      #005588

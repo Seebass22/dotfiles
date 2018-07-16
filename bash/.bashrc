@@ -30,21 +30,23 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
+source /usr/share/git-core/contrib/completion/git-prompt.sh
 
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-force_color_prompt=yes
-
+## set variable identifying the chroot you work in (used in the prompt below)
+#if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+#    debian_chroot=$(cat /etc/debian_chroot)
+#fi
+#
+## set a fancy prompt (non-color, unless we know we "want" color)
+#case "$TERM" in
+#    xterm-color|*-256color) color_prompt=yes;;
+#esac
+#
+## uncomment for a colored prompt, if the terminal has the capability; turned
+## off by default to not distract the user: the focus in a terminal window
+## should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+#
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# We have color support; assume it's compliant with Ecma-48
@@ -55,41 +57,46 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
+#
+#if [ "$color_prompt" = yes ]; then
+##default:
+##   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#
+##default with git:
+##   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
+#
+##default with git and newline:
+##   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\n\$ '
+#
+##default with git and newline (yellow git branch):
+#   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)")\n\[\033[00m\]\$ '
+#
 
-if [ "$color_prompt" = yes ]; then
-#default:
-#   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-
-#default with git:
-#   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
-
-#default with git and newline:
-#   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\n\$ '
-
+#new
 #default with git and newline (yellow git branch):
-   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)")\n\[\033[00m\]\$ '
+   PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)")\n\[\033[00m\]\$ '
 
-# no user and host w. git 
-#   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
-
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-# PS1 for ssh session
-if [ -n "$SSH_CLIENT" ]; then
-   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-fi
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+## no user and host w. git
+##   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
+#
+#else
+#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+#fi
+#unset color_prompt force_color_prompt
+#
+## PS1 for ssh session
+#if [ -n "$SSH_CLIENT" ]; then
+#   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#fi
+#
+## If this is an xterm set the title to user@host:dir
+#case "$TERM" in
+#xterm*|rxvt*)
+#    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#    ;;
+#*)
+#    ;;
+#esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -147,8 +154,8 @@ fi
 #setsid wal -r
 
 #add ruby gems to path
-export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+#export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+#export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 #export GEM_PATH=$HOME/.gem
 
 export PATH="${PATH}:${HOME}/.local/bin/"
@@ -180,8 +187,16 @@ alias n='ncmpcpp'
 alias quiz='nvim -R ~/Documents/C/Quiz/quiz.c'
 alias themes='~/bashscripts/walthemes.sh'
 alias chtheme='~/bashscripts/chtheme.sh'
+alias shading='~/bashscripts/shading.sh'
+alias stopbg='pkill -9 xwinwrap'
+alias mountrpi='sshfs rpi:/home/pi/ /home/seb22/extern/'
+alias rpic='~/bashscripts/getpic.sh'
+alias pikill='ssh rpi "pkill -9 python"'
+alias pistart='ssh rpi "python ~/Desktop/melodyracer/main.py"'
+alias weather='cat /tmp/weatherfile'
+alias graph='git log --all --decorate --oneline --graph'
 
-#vim intead of neovim for cool retro term
-case "$TERM" in
-    xterm) alias v='vim';;
-esac
+##vim intead of neovim for cool retro term
+#case "$TERM" in
+#    xterm) alias v='vim';;
+#esac
