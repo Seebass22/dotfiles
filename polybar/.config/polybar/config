@@ -61,7 +61,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = ssh-info weather xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = ssh-info weather volume xkeyboard memory cpu wlan eth temperature date powermenu
 
 tray-position = right
 tray-padding = 2
