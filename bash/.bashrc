@@ -31,6 +31,7 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+#enable git branch in PS1
 source /usr/share/git-core/contrib/completion/git-prompt.sh
 
 ## set variable identifying the chroot you work in (used in the prompt below)
@@ -59,35 +60,14 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 #
-#if [ "$color_prompt" = yes ]; then
-##default:
-##   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-#
-##default with git:
-##   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
-#
-##default with git and newline:
-##   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\n\$ '
-#
-##default with git and newline (yellow git branch):
-#   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)")\n\[\033[00m\]\$ '
-#
 
 #new
 #default with git and newline (yellow git branch):
    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)")\n\[\033[00m\]\$ '
 
-## no user and host w. git
-##   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
-#
-#else
-#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-#fi
-#unset color_prompt force_color_prompt
-#
 ## PS1 for ssh session
 #if [ -n "$SSH_CLIENT" ]; then
-#   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#   PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 #fi
 #
 ## If this is an xterm set the title to user@host:dir
@@ -196,6 +176,7 @@ alias pikill='ssh rpi "pkill -9 python"'
 alias pistart='ssh rpi "python ~/Desktop/melodyracer/main.py"'
 alias weather='cat /tmp/weatherfile'
 alias graph='git log --all --decorate --oneline --graph'
+alias addsong='mpc current >> ~/Documents/notes/songs'
 
 ##vim intead of neovim for cool retro term
 #case "$TERM" in
