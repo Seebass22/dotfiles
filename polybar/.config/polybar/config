@@ -59,9 +59,9 @@ font-0 = curie:pixelsize=12;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm i3
+modules-left = i3
 modules-center = mpd
-modules-right = ssh-info weather volume xkeyboard memory cpu wlan eth temperature date powermenu
+modules-right = ssh-info weather volume xkeyboard memory cpu temperature date powermenu
 
 tray-position = right
 tray-padding = 2
