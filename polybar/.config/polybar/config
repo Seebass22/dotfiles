@@ -61,7 +61,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = mpd
-modules-right = ssh-info weather volume xkeyboard memory cpu temperature date
+modules-right = ssh-info weather alsa xkeyboard memory cpu temperature date
 
 tray-position = right
 tray-padding = 2
@@ -290,8 +290,8 @@ format-underline = ${xrdb:color6:#222}
 
 label = %date% %time%
 
-[module/volume]
-type = internal/volume
+[module/alsa]
+type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL
