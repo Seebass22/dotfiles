@@ -61,7 +61,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = mpd
-modules-right = ssh-info weather volume xkeyboard memory cpu temperature date powermenu
+modules-right = ssh-info weather volume xkeyboard memory cpu temperature date
 
 tray-position = right
 tray-padding = 2
@@ -368,13 +368,13 @@ format-underline = ${xrdb:color9:#222}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
