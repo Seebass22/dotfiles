@@ -91,7 +91,7 @@ interval = 5
 [module/weather]
 type = custom/script
 exec = ~/.config/polybar/userscripts/weather.sh
-interval = 3600
+interval = 7200
 ;;; END USER MODULES END HERE ;;;
 
 [module/xwindow]
@@ -179,13 +179,13 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online = <label-song>  <icon-prev> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = [<-]
+;icon-stop = 
+icon-play = [play]
+icon-pause = [pause]
+icon-next = [->]
 
 label-song-maxlen = 80
 label-song-ellipsis = true
