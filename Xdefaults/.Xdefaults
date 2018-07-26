@@ -36,7 +36,8 @@ URxvt.depth:		32
 URxvt.font: 		xft:curie:size=12
 URxvt.scrollBar:	false
 URxvt.cursorColor:	white
-URxvt.perl-ext-common:	default,matcher,resize-font,keyboard-select
+!URxvt.perl-ext-common:	default,matcher,resize-font,keyboard-select
+URxvt.perl-ext-common:	default,matcher
 !URxvt.perl-lib:		$HOME/.config/Scripts
 URxvt.url-launcher:	/usr/bin/xdg-open
 URxvt.matcher.button:	1
@@ -51,6 +52,8 @@ URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.transparent: false
 URxvt.shading: 10
 !endnew
+
+URxvt.internalBorder: 4
 
 !URxvt.colorUL:		#4682B4
 !rofi.color-enabled:	true
