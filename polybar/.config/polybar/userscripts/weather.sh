@@ -11,8 +11,7 @@ if [ $update -eq 1 ] ; then
 	curl -s wttr.in/$city > /tmp/weatherfile
 fi
 
-cat /tmp/weatherfile | grep ° > /dev/null
-if [ $? -eq 0 ]
+if grep -q ° /tmp/weatherfile
 then
 	echo "$city: $(cat /tmp/weatherfile | grep ° | head -n 1 | awk '{print $(NF - 1) $NF}' | sed "s,\x1B\[[0-9;]*[a-zA-Z],,g")"
 else
