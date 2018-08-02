@@ -139,7 +139,8 @@ bindsym Mod1+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym Mod1+Shift+e exec ~/bashscripts/i3quit.sh
 
 ## resize window (you can also use the mouse for that)                  #
 #mode "resize" {                                                        #
@@ -204,10 +205,15 @@ bindsym Mod1+s 				gaps inner current plus 5
 bindsym Mod1+Shift+s		gaps inner current minus 5
 
 #resizing(new)
-bindsym Mod1+Shift+y		resize shrink width 10 px or 10ppt
+bindsym Mod1+Shift+y		resize shrink width 10 px or 10 ppt
 bindsym Mod1+Shift+u		resize shrink height 10 px or 10 ppt
 bindsym Mod1+Shift+i		resize grow height 10 px or 10 ppt
 bindsym Mod1+Shift+o		resize grow width 10 px or 10 ppt
+
+bindsym Mod1+y		resize shrink width 5 px or 5 ppt
+bindsym Mod1+u		resize shrink height 5 px or 5 ppt
+bindsym Mod1+i		resize grow height 5 px or 5 ppt
+bindsym Mod1+o		resize grow width 5 px or 5 ppt
 
 focus_follows_mouse no
 
