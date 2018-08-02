@@ -20,7 +20,8 @@ c.statusbar.hide = True
 c.tabs.show = 'multiple'
 
 c.url.searchengines = {
-        'DEFAULT': 'https://duckduckgo.com/?q={}',
+        'DEFAULT': "https://www.google.ca/search?q={}",
+        'ddg': 'https://duckduckgo.com/?q={}',
         'yt': 'https://www.youtube.com/results?search_query={}',
         'red': 'https://reddit.com/r/{}'
         }
