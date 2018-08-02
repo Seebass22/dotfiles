@@ -177,8 +177,10 @@ alias pistart='ssh rpi "python ~/Desktop/melodyracer/main.py"'
 alias weather='cat /tmp/weatherfile'
 alias graph='git log --all --decorate --oneline --graph'
 alias addsong='mpc current >> ~/Documents/notes/songs'
+alias dirzip='~/bashscripts/dirzip.sh'
+alias musiczip='~/bashscripts/musiczip.sh'
 
-##vim intead of neovim for cool retro term
+alias i3screenshot='~/bashscripts/i3screenshot.sh'
 #case "$TERM" in
 #    xterm) alias v='vim';;
 #esac
