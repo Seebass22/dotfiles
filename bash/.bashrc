@@ -69,7 +69,7 @@ if [ "$color_prompt" = yes ]; then
 #default with git and newline (yellow git branch):
    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)")\n\[\033[00m\]\$ '
 
-# no user and host w. git 
+# no user and host w. git
 #   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
 
 else
@@ -180,6 +180,15 @@ alias n='ncmpcpp'
 alias quiz='nvim -R ~/Documents/C/Quiz/quiz.c'
 alias themes='~/bashscripts/walthemes.sh'
 alias chtheme='~/bashscripts/chtheme.sh'
+alias shading='~/bashscripts/shading.sh'
+alias stopbg='pkill -9 xwinwrap'
+alias mountrpi='sshfs rpi:/home/pi/ /home/seb22/extern/'
+alias rpic='~/bashscripts/getpic.sh'
+alias rpi='ssh rpi "~/Desktop/melodyracer/main.py"'
+alias p='ssh rpi "pkill -2 python"'
+alias pistart='ssh rpi "python ~/Desktop/melodyracer/main.py"'
+alias weather='cat /tmp/weatherfile'
+alias graph='git log --all --decorate --oneline --graph'
 
 #vim intead of neovim for cool retro term
 case "$TERM" in
