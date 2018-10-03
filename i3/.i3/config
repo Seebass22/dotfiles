@@ -239,10 +239,12 @@ bindsym XF86AudioMute exec $HOME/.config/.otherscripts/mutetoggle.sh
 
 # Screen brightness controls
 # increase screen brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessUp exec light -A 5
 
 # decrease screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessDown exec light -U 5
 
 # Touchpad controls (script not yet implemented)
 # bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad

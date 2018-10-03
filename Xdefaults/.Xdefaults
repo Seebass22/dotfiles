@@ -33,7 +33,7 @@ URxvt.intensityStyles:	false
 URxvt.background:      #000000
 URxvt.depth:		32
 !URxvt.font: 		xft:monospace:size=11
-URxvt.font: 		xft:curie:size=12
+URxvt.font: 		xft:curie:size=8
 URxvt.scrollBar:	false
 URxvt.cursorColor:	white
 !URxvt.perl-ext-common:	default,matcher,resize-font,keyboard-select
