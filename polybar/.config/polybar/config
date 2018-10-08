@@ -61,7 +61,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = mpd
-modules-right = ssh-info weather alsa xkeyboard memory cpu temperature date
+modules-right = battery ssh-info weather alsa xkeyboard memory cpu temperature date
 
 tray-position = right
 tray-padding = 2
@@ -333,12 +333,12 @@ battery = BAT1
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> <label-charging> (charging)
+format-charging = battery: <animation-charging> <label-charging> (charging)
 ;format-charging-underline = #ffb52a
 format-charging-underline = ${xrdb:color11:#222}
 
 
-format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = battery: <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
