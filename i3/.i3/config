@@ -257,7 +257,8 @@ bindsym XF86MonBrightnessDown exec light -U 5
 
 #lock i3
 #bindsym Mod1+shift+x exec i3lock
-bindsym Mod1+shift+x exec bash ~/.xlock/lockscript.sh
+#bindsym Mod1+shift+x exec bash ~/.xlock/lockscript.sh
+bindsym Mod1+shift+x exec bash ~/bashscripts/books.sh
 
 # take a screenshot with gnome-screenshot
 #bindsym Print exec gnome-screenshot
