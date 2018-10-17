@@ -317,4 +317,8 @@
 #    summary = *twitter.com*
 #    urgency = normal
 #
+[play_sound]
+    summary = "*"
+	script = /home/seb22/bashscripts/dunstalert.sh
+
 # vim: ft=cfg
