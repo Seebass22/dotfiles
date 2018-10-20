@@ -38,14 +38,14 @@ floating_modifier Mod1
 
 # start a terminal
 #bindsym Mod1+Return exec i3-sensible-terminal
-bindsym Mod1+Return exec urxvt
+bindsym Mod1+Return exec --no-startup-id urxvt
 
 # kill focused window
 bindsym Mod1+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym Mod1+d exec dmenu_run
-bindsym Mod1+d exec rofi -modi drun -show drun
+bindsym Mod1+d exec --no-startup-id rofi -modi drun -show drun
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -58,10 +58,10 @@ bindsym Mod1+$up focus up
 bindsym Mod1+$right focus right
 
 ## audio
-bindsym Mod1+Left exec pamixer -t
-bindsym Mod1+Down exec pamixer -d 5
-bindsym Mod1+Up exec pamixer -i 5
-bindsym Mod1+Right exec pamixer --set-volume 100
+bindsym Mod1+Left exec --no-startup-id pamixer -t
+bindsym Mod1+Down exec --no-startup-id pamixer -d 5
+bindsym Mod1+Up exec --no-startup-id pamixer -i 5
+bindsym Mod1+Right exec --no-startup-id pamixer --set-volume 100
 
 # move focused window
 bindsym Mod1+Shift+$left move left
@@ -140,7 +140,7 @@ bindsym Mod1+Shift+c reload
 bindsym Mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym Mod1+Shift+e exec ~/bashscripts/i3quit.sh
+bindsym Mod1+Shift+e exec --no-startup-id ~/bashscripts/i3quit.sh
 
 ## resize window (you can also use the mouse for that)                  #
 #mode "resize" {                                                        #
@@ -187,9 +187,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #######################################################################
 #new things begin here :)
 
-exec no-startup-id compton
-exec ~/.fehbg &
-exec wal -R
+exec --no-startup-id compton
+exec --no-startup-id ~/.fehbg &
+exec --no-startup-id wal -R
 #smart_borders on
 
 #required for gaps
@@ -218,21 +218,21 @@ bindsym Mod1+o		resize grow width 5 px or 5 ppt
 focus_follows_mouse no
 
 ##program binds
-bindsym Mod1+r exec urxvt -e ranger
-bindsym Mod1+m exec urxvt -e ncmpcpp
+bindsym Mod1+r exec --no-startup-id urxvt -e ranger
+bindsym Mod1+m exec --no-startup-id urxvt -e ncmpcpp
 
 # Pulse Audio controls
 #increase sound volume
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym XF86AudioRaiseVolume  exec $HOME/.config/.otherscripts/volumeup.sh
+bindsym XF86AudioRaiseVolume  exec --no-startup-id $HOME/.config/.otherscripts/volumeup.sh
 
 #decrease sound volume
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym XF86AudioLowerVolume exec $HOME/.config/.otherscripts/volumedown.sh
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.config/.otherscripts/volumedown.sh
 
 # mute sound
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-bindsym XF86AudioMute exec $HOME/.config/.otherscripts/mutetoggle.sh
+bindsym XF86AudioMute exec --no-startup-id $HOME/.config/.otherscripts/mutetoggle.sh
 
 ## audio fix:
 ## pacmd list-sources | awk '/index/ {print $2;exit;}'
@@ -240,11 +240,11 @@ bindsym XF86AudioMute exec $HOME/.config/.otherscripts/mutetoggle.sh
 # Screen brightness controls
 # increase screen brightness
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 
 # decrease screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 # Touchpad controls (script not yet implemented)
 # bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -258,14 +258,14 @@ bindsym XF86MonBrightnessDown exec light -U 5
 #lock i3
 #bindsym Mod1+shift+x exec i3lock
 #bindsym Mod1+shift+x exec bash ~/.xlock/lockscript.sh
-bindsym Mod1+shift+x exec bash ~/bashscripts/books.sh
+bindsym Mod1+shift+x exec --no-startup-id bash ~/bashscripts/books.sh
 
 # take a screenshot with gnome-screenshot
 #bindsym Print exec gnome-screenshot
-bindsym Print exec nougat -csf
+bindsym Print exec --no-startup-id nougat -csf
 #bindsym Print exec nougat -ctsf
 #bindsym Print+Shift exec nougat -f
-bindsym Mod1+b exec nougat -f
+bindsym Mod1+b exec --no-startup-id nougat -f
 #bindsym Mod1+Shift+b exec scrot -s
 
 #scrot for screenshots
