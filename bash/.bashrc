@@ -170,17 +170,14 @@ alias themes='~/bashscripts/walthemes.sh'
 alias chtheme='~/bashscripts/chtheme.sh'
 alias shading='~/bashscripts/shading.sh'
 alias stopbg='pkill -9 xwinwrap'
-alias mountrpi='sshfs rpi:/home/pi/ /home/seb22/extern/'
 alias rpic='~/bashscripts/getpic.sh'
-alias pikill='ssh rpi "pkill -9 python"'
-alias pistart='ssh rpi "python ~/Desktop/melodyracer/main.py"'
 alias weather='cat /tmp/weatherfile'
 alias graph='git log --all --decorate --oneline --graph'
-alias addsong='mpc current >> ~/Documents/notes/songs'
 alias dirzip='~/bashscripts/dirzip.sh'
 alias musiczip='~/bashscripts/musiczip.sh'
+alias pdf='~/bashscripts/pdf.sh'
 
 alias i3screenshot='~/bashscripts/i3screenshot.sh'
-#case "$TERM" in
-#    xterm) alias v='vim';;
-#esac
+case "$TERM" in
+    xterm) alias v='vim';;
+esac
