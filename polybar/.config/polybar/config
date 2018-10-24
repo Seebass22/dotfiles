@@ -44,7 +44,7 @@ foreground = ${colors.foreground}
 line-size = 1
 line-color = #f00
 
-border-size = 1
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -62,7 +62,7 @@ font-2 = siji:pixelsize=10;1
 modules-left = i3
 ;modules-center = mpd
 modules-center =
-modules-right = battery ssh-info weather alsa xkeyboard memory cpu temperature wlan date
+modules-right = ssh-info weather battery alsa xkeyboard memory cpu temperature wlan date
 
 tray-position = right
 tray-padding = 2
