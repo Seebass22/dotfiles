@@ -176,6 +176,7 @@ alias graph='git log --all --decorate --oneline --graph'
 alias dirzip='~/bashscripts/dirzip.sh'
 alias musiczip='~/bashscripts/musiczip.sh'
 alias pdf='~/bashscripts/pdf.sh'
+alias m='octave --no-gui'
 
 alias i3screenshot='~/bashscripts/i3screenshot.sh'
 case "$TERM" in
