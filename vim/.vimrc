@@ -112,3 +112,5 @@ endif
 
 "inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 nnoremap <Space><space> /<++><Enter>"_c4l
+
+command Octave !octave --no-gui %

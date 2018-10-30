@@ -181,6 +181,8 @@ alias book='~/bashscripts/books.sh'
 alias pdf='~/bashscripts/pdf.sh'
 alias discoverip='~/bashscripts/showhosts.sh'
 alias mpvmono='mpv --audio-channels=mono'
+alias m='octave --no-gui'
+alias mp='octave --no-gui --persist'
 
 alias dab='~/Documents/useless\ stuff/dab.sh'
 alias doubt='cat ~/Documents/useless\ stuff/doubt'
