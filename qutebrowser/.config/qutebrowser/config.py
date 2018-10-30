@@ -28,5 +28,6 @@ c.url.searchengines = {
 
 #play video in mpv (bind for normal mode)
 config.bind('<Ctrl-v>', 'spawn mpv {url}')
+config.bind('<Ctrl-y>', 'spawn youtube-dl -o "~/Videos/%(title)s.%(ext)s" {url}')
 
 c.editor.command = ['urxvt', '-e', 'nvim', '{}']
