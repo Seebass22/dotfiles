@@ -112,5 +112,6 @@ endif
 
 "inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 nnoremap <Space><space> /<++><Enter>"_c4l
+nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 
 command Octave !octave --no-gui %
