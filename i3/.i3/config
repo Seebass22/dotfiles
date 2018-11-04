@@ -122,6 +122,10 @@ bindsym Mod1+8 workspace 8
 bindsym Mod1+9 workspace 9
 bindsym Mod1+0 workspace 10
 
+# super + j/k = next/prev workspace
+bindsym Mod4+$down workspace next
+bindsym Mod4+$up workspace prev
+
 # move focused container to workspace
 bindsym Mod1+Shift+1 move container to workspace 1
 bindsym Mod1+Shift+2 move container to workspace 2
