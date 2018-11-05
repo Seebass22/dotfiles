@@ -112,5 +112,11 @@ endif
 
 "inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 nnoremap <Space><space> /<++><Enter>"_c4l
+nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 
+"for loop
+"count <leader>for
+inoremap <leader>for <esc>Ifor (int i = 0; i < <esc>A; i++) {<enter>}<esc>O
+
+"run gnu octave on file
 command Octave !octave --no-gui %
