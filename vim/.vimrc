@@ -21,6 +21,7 @@ Plugin 'dylanaraps/wal.vim'
 "statusline themes
 Plugin 'vim-airline/vim-airline-themes'
 
+"highlights yanked text
 Plugin 'machakann/vim-highlightedyank'
 
 "git wrapper
