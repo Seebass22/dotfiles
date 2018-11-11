@@ -8,19 +8,31 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+" plugin-manager
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+"statusline
 Plugin 'vim-airline/vim-airline'
 
+"wal colortheme
 Plugin 'dylanaraps/wal.vim'
 
+"statusline themes
 Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'machakann/vim-highlightedyank'
 
+"git wrapper
 Plugin 'tpope/vim-fugitive'
 
+"github extension for fugitive
+Plugin 'tpope/vim-rhubarb'
+
+"comment binds
+Plugin 'tpope/vim-commentary'
+
+"i3 config syntax highlighting
 Plugin 'PotatoesMaster/i3-vim-syntax'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -65,7 +77,7 @@ set hidden
 "set showbreak=\\\\\
 syntax on
 filetype indent on
-filetype plugin on 
+filetype plugin on
 
 "set background=light
 colorscheme wal
@@ -82,7 +94,7 @@ set wildmenu
 " highlight current line
 "set cursorline
 
-"indentation settings for using 4 spaces instead of tabs. 
+"indentation settings for using 4 spaces instead of tabs.
 "does not change tabstop from its default value of 8.
 "set shiftwidth=4
 "set softtabstop=4
@@ -94,7 +106,7 @@ set shiftwidth=4
 set tabstop=4
 
 " toggles between paste and nopaste
-"set pastetoggle=<F2> 
+"set pastetoggle=<F2>
 
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_left_sep='>'
@@ -120,3 +132,6 @@ inoremap <leader>for <esc>Ifor (int i = 0; i < <esc>A; i++) {<enter>}<esc>O
 
 "run gnu octave on file
 command Octave !octave --no-gui %
+
+"comment syntax for markdown (vim-commentary plugin)
+autocmd FileType markdown setlocal commentstring=<\!--\ %s\ -->
