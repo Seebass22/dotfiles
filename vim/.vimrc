@@ -30,11 +30,18 @@ Plugin 'tpope/vim-fugitive'
 "github extension for fugitive
 Plugin 'tpope/vim-rhubarb'
 
-"comment binds
+"comment stuff out easily
 Plugin 'tpope/vim-commentary'
 
 "i3 config syntax highlighting
 Plugin 'PotatoesMaster/i3-vim-syntax'
+
+"snippet functionality
+Plugin 'SirVer/ultisnips'
+
+"default snippets
+Plugin 'honza/vim-snippets'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -127,12 +134,24 @@ endif
 nnoremap <Space><space> /<++><Enter>"_c4l
 nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 
-"for loop
+"for loop (REPLACED BY ULTISNIPS)
 "count <leader>for
-inoremap <leader>for <esc>Ifor (int i = 0; i < <esc>A; i++) {<enter>}<esc>O
+" inoremap <leader>for <esc>Ifor (int i = 0; i < <esc>A; i++) {<enter>}<esc>O
 
 "run gnu octave on file
 command Octave !octave --no-gui %
 
 "comment syntax for markdown (vim-commentary plugin)
 autocmd FileType markdown setlocal commentstring=<\!--\ %s\ -->
+
+"change ultisnips binds
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+"makes custom snippets work
+let g:UltiSnipsSnippetsDir = "~/.vim/ultisnips"
+let g:UltiSnipsSnippetDirectories=["ultisnips"]
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
