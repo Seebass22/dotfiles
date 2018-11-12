@@ -8,20 +8,40 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+" plugin-manager
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+"statusline
 Plugin 'vim-airline/vim-airline'
 
+"wal colortheme
 Plugin 'dylanaraps/wal.vim'
 
+"statusline themes
 Plugin 'vim-airline/vim-airline-themes'
 
+"highlights yanked text
 Plugin 'machakann/vim-highlightedyank'
 
+"git wrapper
 Plugin 'tpope/vim-fugitive'
 
+"github extension for fugitive
+Plugin 'tpope/vim-rhubarb'
+
+"comment stuff out easily
+Plugin 'tpope/vim-commentary'
+
+"i3 config syntax highlighting
 Plugin 'PotatoesMaster/i3-vim-syntax'
+
+"snippet functionality
+Plugin 'SirVer/ultisnips'
+
+"default snippets
+"Plugin 'honza/vim-snippets'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -65,7 +85,7 @@ set hidden
 "set showbreak=\\\\\
 syntax on
 filetype indent on
-filetype plugin on 
+filetype plugin on
 
 "set background=light
 colorscheme wal
@@ -82,7 +102,7 @@ set wildmenu
 " highlight current line
 "set cursorline
 
-"indentation settings for using 4 spaces instead of tabs. 
+"indentation settings for using 4 spaces instead of tabs.
 "does not change tabstop from its default value of 8.
 "set shiftwidth=4
 "set softtabstop=4
@@ -94,7 +114,7 @@ set shiftwidth=4
 set tabstop=4
 
 " toggles between paste and nopaste
-"set pastetoggle=<F2> 
+"set pastetoggle=<F2>
 
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_left_sep='>'
@@ -114,9 +134,24 @@ endif
 nnoremap <Space><space> /<++><Enter>"_c4l
 nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 
-"for loop
+"for loop (REPLACED BY ULTISNIPS)
 "count <leader>for
-inoremap <leader>for <esc>Ifor (int i = 0; i < <esc>A; i++) {<enter>}<esc>O
+" inoremap <leader>for <esc>Ifor (int i = 0; i < <esc>A; i++) {<enter>}<esc>O
 
 "run gnu octave on file
 command Octave !octave --no-gui %
+
+"comment syntax for markdown (vim-commentary plugin)
+autocmd FileType markdown setlocal commentstring=<\!--\ %s\ -->
+
+"change ultisnips binds
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+"makes custom snippets work
+let g:UltiSnipsSnippetsDir = "~/.vim/ultisnips"
+let g:UltiSnipsSnippetDirectories=["ultisnips"]
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
