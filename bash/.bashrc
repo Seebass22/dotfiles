@@ -177,6 +177,7 @@ alias dirzip='~/bashscripts/dirzip.sh'
 alias musiczip='~/bashscripts/musiczip.sh'
 alias pdf='~/bashscripts/pdf.sh'
 alias m='octave --no-gui'
+alias mp='octave --no-gui --persist'
 
 alias i3screenshot='~/bashscripts/i3screenshot.sh'
 case "$TERM" in
