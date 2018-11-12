@@ -40,7 +40,7 @@ Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'SirVer/ultisnips'
 
 "default snippets
-Plugin 'honza/vim-snippets'
+"Plugin 'honza/vim-snippets'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
