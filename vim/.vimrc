@@ -139,7 +139,7 @@ nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 " inoremap <leader>for <esc>Ifor (int i = 0; i < <esc>A; i++) {<enter>}<esc>O
 
 "run gnu octave on file
-command Octave !octave --no-gui %
+command Octave !octave -W %
 
 "comment syntax for markdown (vim-commentary plugin)
 autocmd FileType markdown setlocal commentstring=<\!--\ %s\ -->
