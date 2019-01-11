@@ -58,10 +58,10 @@ bindsym Mod1+$up focus up
 bindsym Mod1+$right focus right
 
 ## audio
-bindsym Mod1+Left exec --no-startup-id pamixer -t
+bindsym Mod1+Left exec --no-startup-id ~/bashscripts/i3workspace.sh left
 bindsym Mod1+Down exec --no-startup-id pamixer -d 5
 bindsym Mod1+Up exec --no-startup-id pamixer -i 5
-bindsym Mod1+Right exec --no-startup-id pamixer --set-volume 100
+bindsym Mod1+Right exec --no-startup-id ~/bashscripts/i3workspace.sh right
 
 # move focused window
 bindsym Mod1+Shift+$left move left
