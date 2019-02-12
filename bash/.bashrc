@@ -150,10 +150,6 @@ export EDITOR=nvim
 #more aliases
 alias v='nvim'
 alias nf='clear && neofetch'
-alias cdmiss='cd ~/Documents/C/MissileAlert'
-alias cdquiz='cd ~/Documents/C/Quiz'
-alias stopssh='systemctl stop ssh'
-alias startssh='systemctl start ssh'
 alias remove='~/bashscripts/remove.sh'
 alias showfilesize='~/bashscripts/showfilesize.sh'
 alias showip='~/bashscripts/showip.sh'
