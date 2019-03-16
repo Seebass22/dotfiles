@@ -18,7 +18,7 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=2000
-HISTFILESIZE=15000
+HISTFILESIZE=30000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -69,15 +69,6 @@ fi
 #if [ -n "$SSH_CLIENT" ]; then
 #   PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 #fi
-#
-## If this is an xterm set the title to user@host:dir
-#case "$TERM" in
-#xterm*|rxvt*)
-#    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-#    ;;
-#*)
-#    ;;
-#esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -150,15 +141,11 @@ export EDITOR=nvim
 #more aliases
 alias v='nvim'
 alias nf='clear && neofetch'
-alias cdquiz='cd ~/Documents/C/Quiz'
-alias stopssh='systemctl stop ssh'
-alias startssh='systemctl start ssh'
 alias remove='~/bashscripts/remove.sh'
 alias showfilesize='~/bashscripts/showfilesize.sh'
 alias showip='~/bashscripts/showip.sh'
 alias cheat='~/bashscripts/cheat.sh'
 alias info='info --vi-keys'
-alias pipes='~/useless\ stuff/pipes.sh/pipes.sh'
 alias vnrc='nvim -u NORC'
 alias jump='cd "$(cat ~/.jump)"'
 alias jtemp='cd "$(cat ~/.jump2)"'
@@ -174,20 +161,32 @@ alias graph='git log --all --decorate --oneline --graph'
 alias addsong='mpc current >> ~/Documents/notes/songs'
 alias dirzip='~/bashscripts/dirzip.sh'
 alias musiczip='~/bashscripts/musiczip.sh'
+alias mz='~/bashscripts/musiczip.sh *.zip; cd music'
 alias i3screenshot='~/bashscripts/i3screenshot.sh'
 alias emoji='~/Downloads/emoji.sh'
-alias s='scrot -s'
+alias s='~/bashscripts/scrotclip.sh'
 alias book='~/bashscripts/books.sh'
 alias pdf='~/bashscripts/pdf.sh'
 alias discoverip='~/bashscripts/showhosts.sh'
 alias mpvmono='mpv --audio-channels=mono'
 alias m='octave --no-gui'
 alias mp='octave --no-gui --persist'
+alias p='~/bashscripts/vimpdf.sh'
+alias yt='~/bashscripts/yt.sh'
+alias twitch='~/bashscripts/twitch.sh'
+alias fixdisplay='~/bashscripts/fixdisplay.sh'
+alias zips='~/bashscripts/zips.sh'
+alias music='cd /mnt/D/music/bandcamp'
+alias hc='herbstclient'
+alias startgnome='~/bashscripts/startgnome.sh'
 
 alias dab='~/Documents/useless\ stuff/dab.sh'
 alias doubt='cat ~/Documents/useless\ stuff/doubt'
+alias tf2='steam steam://rungameid/440'
 
 #vi intead of neovim for cool retro term
 case "$TERM" in
     xterm) alias v='vi';;
 esac
+
+peek() { tmux split-window -p 33 "$EDITOR" "$@" || exit; }
