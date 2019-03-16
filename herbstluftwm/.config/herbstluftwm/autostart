@@ -28,6 +28,7 @@ hc keybind $Mod-w spawn firefox
 hc keybind $Mod-d spawn rofi -modi drun -show drun
 hc keybind $Mod-Shift-s spawn /home/seb22/bashscripts/dmenu_symbols.sh
 hc keybind $Mod-Shift-p spawn /home/seb22/bashscripts/pauseplay.sh
+hc keybind $Mod-Shift-x spawn /home/seb22/bashscripts/books.sh
 hc keybind $Mod-Shift-n spawn mpc next
 hc keybind $Mod-m spawn /home/seb22/bashscripts/yt.sh
 
@@ -41,6 +42,8 @@ hc keybind $Mod-h     focus left
 hc keybind $Mod-j     focus down
 hc keybind $Mod-k     focus up
 hc keybind $Mod-l     focus right
+
+hc keybind $Mod-b focus_monitor +1
 
 # moving clients
 hc keybind $Mod-Shift-Left  shift left
@@ -172,8 +175,11 @@ done
 ~/.fehbg &
 wal -R
 if hc silent new_attr bool my_not_first_autostart ; then
-	hc load 2 "$(cat ~/rightlayout)"
+	hc load 2 "$(cat ~/.config/herbstluftwm/layouts/messaging)"
+	hc load 8 "$(cat ~/.config/herbstluftwm/layouts/steam)"
 	hc spawn kdeconnect-indicator
+	hc spawn redshift-gtk
+	bash ~/.config/herbstluftwm/startups
 fi
 hc keybind $Mod-z cycle_value always_show_frame 0 1
-hc keybind $Mod-g cycle_value frame_gap 18 0
+hc keybind $Mod-g cycle_value frame_gap 18 4

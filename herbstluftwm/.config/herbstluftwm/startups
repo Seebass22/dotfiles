@@ -1,0 +1,20 @@
+bash ~/bashscripts/fixdisplay.sh 
+herbstclient focus_monitor 1
+herbstclient rule --class=Riot --tag=2 --focus=off --index=100
+herbstclient rule --class=discord --tag=2 --focus=off --index=110
+herbstclient rule --label=tg --class=TelegramDesktop --tag=2 --focus=off --index=00
+herbstclient rule --label=qb --class=qutebrowser --tag=2 --focus=off --index=01
+herbstclient rule --label=music --class=URxvt --tag=2 --focus=off --index=111
+#herbstclient rule --label=cava --class=URxvt --tag=2 --focus=off --index=1011
+
+herbstclient spawn urxvt -e ncmpcpp
+herbstclient spawn flatpak run com.discordapp.Discord
+herbstclient spawn flatpak run org.telegram.desktop
+herbstclient spawn flatpak run im.riot.Riot
+herbstclient spawn ~/.local/bin/whatsapp
+
+sleep 1
+herbstclient unrule music
+
+sleep 5
+herbstclient unrule qb
