@@ -133,9 +133,6 @@ fi
 export PATH="${PATH}:${HOME}/.local/bin/"
 
 export EDITOR=nvim
-#VISUAL=vim
-#export VISUAL EDITOR=vim
-#export EDITOR
 #export PDFVIEWER=zathura
 
 #more aliases
@@ -146,7 +143,6 @@ alias showfilesize='~/bashscripts/showfilesize.sh'
 alias showip='~/bashscripts/showip.sh'
 alias cheat='~/bashscripts/cheat.sh'
 alias info='info --vi-keys'
-alias vnrc='nvim -u NORC'
 alias jump='cd "$(cat ~/.jump)"'
 alias jtemp='cd "$(cat ~/.jump2)"'
 alias gj='echo $(pwd -P) > ~/.jump'
@@ -161,32 +157,55 @@ alias graph='git log --all --decorate --oneline --graph'
 alias addsong='mpc current >> ~/Documents/notes/songs'
 alias dirzip='~/bashscripts/dirzip.sh'
 alias musiczip='~/bashscripts/musiczip.sh'
-alias mz='~/bashscripts/musiczip.sh *.zip; cd music'
+alias mz='cd ~/Downloads; ~/bashscripts/musiczip.sh *.zip; cd music; ranger'
 alias i3screenshot='~/bashscripts/i3screenshot.sh'
 alias emoji='~/Downloads/emoji.sh'
 alias s='~/bashscripts/scrotclip.sh'
 alias book='~/bashscripts/books.sh'
 alias pdf='~/bashscripts/pdf.sh'
+alias png='~/bashscripts/png.sh'
+alias p='~/bashscripts/png.sh'
 alias discoverip='~/bashscripts/showhosts.sh'
 alias mpvmono='mpv --audio-channels=mono'
 alias m='octave --no-gui'
 alias mp='octave --no-gui --persist'
-alias p='~/bashscripts/vimpdf.sh'
 alias yt='~/bashscripts/yt.sh'
 alias twitch='~/bashscripts/twitch.sh'
 alias fixdisplay='~/bashscripts/fixdisplay.sh'
 alias zips='~/bashscripts/zips.sh'
-alias music='cd /mnt/D/music/bandcamp'
 alias hc='herbstclient'
 alias startgnome='~/bashscripts/startgnome.sh'
+alias update='flatpak update && sudo dnf upgrade'
+alias fehclip='~/bashscripts/feh_clipboard.sh'
 
-alias dab='~/Documents/useless\ stuff/dab.sh'
-alias doubt='cat ~/Documents/useless\ stuff/doubt'
+alias music='cd /mnt/D/music/bandcamp'
+alias mathe='cd ~/Documents/uni/mathe/'
+alias Info='cd ~/Documents/uni/info/3_Semester/ue/Info3/'
+alias dt='cd ~/Documents/uni/dt/resources/'
+alias em='cd ~/Documents/uni/em'
+alias es2='cd ~/Documents/uni/es2'
+alias harmonica='cd ~/Documents/harmonica/'
+alias calligraphy='cd ~/Documents/calligraphy/'
+
+alias stundenplan='zathura --fork ~/Documents/stundenplan.pdf >/dev/null 2>&1'
+
+alias yu='pip install --user --upgrade youtube-dl'
+alias y='mpv $(xclip -selection c -out)'
+alias ya='mpv --no-video $(xclip -selection c -out)'
+
+alias gdb='gdb -q'
+alias dab='~/Documents/useless_stuff/dab.sh'
+alias doubt='cat ~/Documents/useless_stuff/doubt'
 alias tf2='steam steam://rungameid/440'
+alias pony='mpv http://208.113.165.40:8000/pvfmopus.ogg'
 
+alias ffprobe='ffprobe -hide_banner'
 #vi intead of neovim for cool retro term
 case "$TERM" in
-    xterm) alias v='vi';;
+    linux) alias s='startx';;
 esac
+
+source /usr/share/fzf/shell/key-bindings.bash
+source /usr/share/bash-completion/completions/fzf
 
 peek() { tmux split-window -p 33 "$EDITOR" "$@" || exit; }
