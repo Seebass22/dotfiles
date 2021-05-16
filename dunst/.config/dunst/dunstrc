@@ -319,6 +319,6 @@
 #
 [play_sound]
     summary = "*"
-	script = /home/seb22/bashscripts/dunstalert.sh
+	script = /home/seb22/bashscripts/personal/dunstalert.sh
 
 # vim: ft=cfg
