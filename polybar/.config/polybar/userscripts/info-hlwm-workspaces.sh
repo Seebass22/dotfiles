@@ -21,31 +21,31 @@ herbstclient --idle "tag_*" 2>/dev/null | {
                 case ${i:0:1} in
                     '.')
                         # the tag is empty
-						echo %{F${color1}}
+						echo %{F${background}}
                         ;;
                     ':')
                         # the tag is not empty
-                        # TODO Add your formatting tags
+						echo %{F${foreground}}
                         ;;
                     '+')
                         # the tag is viewed on the specified MONITOR, but this monitor is not focused.
-						echo %{u${color3}}%{+u}
+						echo %{u${foreground}}%{+u}
                         ;;
                     '#')
                         # the tag is viewed on the specified MONITOR and it is focused.
-						echo %{u${color3}}%{+u}
+						echo %{u${foreground}}%{+u}
                         ;;
                     '-')
                         # the tag is viewed on a different MONITOR, but this monitor is not focused.
-                        # TODO Add your formatting tags
+						echo %{F${color6}}
                         ;;
                     '%')
                         # the tag is viewed on a different MONITOR and it is focused.
-                        # TODO Add your formatting tags
+						echo %{F${color6}}
                         ;;
                     '!')
                         # the tag contains an urgent window
-                        # TODO Add your formatting tags
+						echo %{F${color1}}
                         ;;
                 esac
 
