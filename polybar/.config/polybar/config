@@ -44,7 +44,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = info-hlwm-workspaces
 modules-center = musicstatus
-modules-right = ssh-info weather xkeyboard memory cpu temperature date
+modules-right = worktracker ssh-info weather memory cpu temperature date
 
 tray-position = right
 tray-padding = 2
@@ -62,7 +62,8 @@ format-underline = ${xrdb:color6:#222}
 [module/ssh-info]
 type = custom/script
 exec = ~/.config/polybar/userscripts/info-ssh.sh
-interval = 5
+format-underline = ${xrdb:color11:#222}
+interval = 15
 
 [module/weather]
 type = custom/script
@@ -74,6 +75,12 @@ interval = 7200
 type = custom/script
 exec = ~/.config/polybar/userscripts/musicstatus.sh
 interval = 2
+
+[module/worktracker]
+type = custom/script
+exec = ~/.config/polybar/userscripts/worktracker.sh
+format-underline = ${xrdb:color10:#222}
+interval = 5
 
 [module/info-hlwm-workspaces]
 type = custom/script
