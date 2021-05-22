@@ -1,0 +1,4 @@
+configuration {
+	columns: 3;
+	theme: "~/.cache/wal/colors-rofi-dark.rasi";
+}
