@@ -16,7 +16,7 @@ hc keyunbind --all
 # keybindings
 # if you have a super key you will be much happier with Mod set to Mod4
 Mod=Mod1    # Use alt as the main modifier
-#Mod=Mod4   # Use the super key as the main modifier
+# Mod=Mod4   # Use the super key as the main modifier
 
 #hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-q spawn /home/seb22/bashscripts/herbstquit.sh
@@ -29,8 +29,11 @@ hc keybind $Mod-d spawn rofi -modi drun -show drun
 hc keybind $Mod-Shift-s spawn /home/seb22/bashscripts/dmenu_symbols.sh
 hc keybind $Mod-Shift-p spawn /home/seb22/bashscripts/pauseplay.sh
 hc keybind $Mod-Shift-x spawn /home/seb22/bashscripts/books.sh
-hc keybind $Mod-Shift-n spawn mpc next
+# hc keybind $Mod-Shift-n spawn mpc next
+hc keybind $Mod-Shift-n spawn /home/seb22/bashscripts/nextsong.sh
 hc keybind $Mod-m spawn /home/seb22/bashscripts/yt.sh
+hc keybind $Mod-v spawn /home/seb22/bashscripts/feh_clipboard.sh
+# hc keybind Mod4-Shift-s spawn /home/seb22/bashscripts/scrotclip.sh
 
 # basic movement
 # focusing clients
@@ -171,6 +174,7 @@ for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
 	# start it on each monitor
 	"$panel" $monitor &
 done
+hc spawn ~/.config/polybar/launch.sh
 
 ~/.fehbg &
 wal -R
@@ -179,7 +183,9 @@ if hc silent new_attr bool my_not_first_autostart ; then
 	hc load 8 "$(cat ~/.config/herbstluftwm/layouts/steam)"
 	hc spawn kdeconnect-indicator
 	hc spawn redshift-gtk
-	bash ~/.config/herbstluftwm/startups
+	bash ~/.config/herbstluftwm/startups &
 fi
+
 hc keybind $Mod-z cycle_value always_show_frame 0 1
 hc keybind $Mod-g cycle_value frame_gap 18 4
+hc keybind $Mod-t spawn /home/seb22/bashscripts/twitch.sh

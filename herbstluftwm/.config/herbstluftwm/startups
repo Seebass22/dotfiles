@@ -1,20 +1,55 @@
-bash ~/bashscripts/fixdisplay.sh 
+# urxvtopt='-xrm URxvt.font: xft:curie:size=8'
+urxvtopt=""
+
+bash ~/bashscripts/fix_stuff/fixdisplay.sh
 herbstclient focus_monitor 1
-herbstclient rule --class=Riot --tag=2 --focus=off --index=100
+herbstclient rule --class=Element --tag=2 --focus=off --index=100
 herbstclient rule --class=discord --tag=2 --focus=off --index=110
 herbstclient rule --label=tg --class=TelegramDesktop --tag=2 --focus=off --index=00
 herbstclient rule --label=qb --class=qutebrowser --tag=2 --focus=off --index=01
 herbstclient rule --label=music --class=URxvt --tag=2 --focus=off --index=111
-#herbstclient rule --label=cava --class=URxvt --tag=2 --focus=off --index=1011
+herbstclient rule --class=Steam --tag=8 --focus=off
+herbstclient rule --label=firefox --class=Firefox --tag=1 --focus=off
 
-herbstclient spawn urxvt -e ncmpcpp
+herbstclient spawn urxvt $urxvtopt -e ncmpcpp
 herbstclient spawn flatpak run com.discordapp.Discord
 herbstclient spawn flatpak run org.telegram.desktop
 herbstclient spawn flatpak run im.riot.Riot
 herbstclient spawn ~/.local/bin/whatsapp
+herbstclient spawn firefox
 
 sleep 1
 herbstclient unrule music
+herbstclient rule --label=cava --class=URxvt --tag=2 --focus=off --index=10110
+sleep 1
+herbstclient spawn urxvt $urxvtopt -e cava
 
-sleep 5
+sleep 1
+herbstclient unrule cava
+
+sleep 0.5
+herbstclient unrule stats
+herbstclient rule --label=notes --class=URxvt --tag=2 --focus=off --index=10101
+sleep 0.5
+herbstclient spawn urxvt $urxvtopt -e sh -c 'nvi ~/stickynote'
+
+sleep 1
+herbstclient unrule notes
+herbstclient rule --label=clock --class=URxvt --tag=2 --focus=off --index=10100
+sleep 1
+herbstclient spawn urxvt $urxvtopt -e ncmpcpp -s clock
+
+sleep 0.5
+herbstclient unrule clock
+herbstclient rule --label=circle --class=feh --tag=2 --focus=off --index=10110
+herbstclient spawn feh ~/Pictures/circle-5th.png
+
+sleep 3
 herbstclient unrule qb
+herbstclient unrule circle
+
+sleep 20
+herbstclient unrule firefox
+
+sleep 2m
+herbstclient spawn steam
