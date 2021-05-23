@@ -11,7 +11,7 @@ herbstclient rule --label=music --class=URxvt --tag=2 --focus=off --index=111
 herbstclient rule --class=Steam --tag=8 --focus=off
 herbstclient rule --label=firefox --class=Firefox --tag=1 --focus=off
 
-herbstclient spawn urxvt $urxvtopt -e ncmpcpp
+# herbstclient spawn urxvt $urxvtopt -e ncmpcpp
 herbstclient spawn flatpak run com.discordapp.Discord
 herbstclient spawn flatpak run org.telegram.desktop
 herbstclient spawn flatpak run im.riot.Riot
@@ -20,7 +20,7 @@ herbstclient spawn firefox
 
 sleep 1
 herbstclient unrule music
-herbstclient rule --label=cava --class=URxvt --tag=2 --focus=off --index=10110
+herbstclient rule --label=cava --class=URxvt --tag=2 --focus=off --index=10111
 sleep 1
 herbstclient spawn urxvt $urxvtopt -e cava
 

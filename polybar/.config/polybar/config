@@ -107,6 +107,7 @@ interval = 7200
 type = custom/script
 exec = ~/.config/polybar/userscripts/musicstatus.sh
 interval = 2
+click-left = ~/bashscripts/pauseplay.sh
 
 [module/worktracker]
 type = custom/script
@@ -292,17 +293,14 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+date ="%Y-%m-%d "
 
 time = %H:%M
-time-alt = %H:%M:%S
 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${xrdb:color6:#222}
 
-
-label = %date% %time%
+label = %time%, %date%
 
 [module/alsa]
 type = internal/alsa
