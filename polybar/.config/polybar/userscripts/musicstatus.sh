@@ -12,6 +12,10 @@ if [ $? -eq 0 ]; then
 		status="$(echo $artist - $song) $spotifystatus"
 	fi
 elif [ $? -eq 1 ]; then
-	status="$(mpc status | head -n1) $mpdstatus"
+	if [ "$mpdstatus" == '[playing]' ] || [ "$mpdstatus" == '[paused]' ]; then
+		status="$(mpc status | head -n1) $mpdstatus"
+	else
+		status="mpd stopped"
+	fi
 fi
 echo "$status"

@@ -106,7 +106,7 @@ interval = 7200
 [module/musicstatus]
 type = custom/script
 exec = ~/.config/polybar/userscripts/musicstatus.sh
-interval = 2
+interval = 1
 click-left = ~/bashscripts/pauseplay.sh
 
 [module/worktracker]
