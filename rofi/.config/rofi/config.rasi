@@ -1,4 +1,7 @@
 configuration {
 	columns: 3;
-	theme: "~/.cache/wal/colors-rofi-dark.rasi";
+	lines: 20;
+	font: "Noto Sans 12";
 }
+
+@import "~/.cache/wal/colors-rofi-light.rasi"
