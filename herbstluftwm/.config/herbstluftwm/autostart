@@ -15,8 +15,8 @@ hc keyunbind --all
 
 # keybindings
 # if you have a super key you will be much happier with Mod set to Mod4
-Mod=Mod1    # Use alt as the main modifier
-# Mod=Mod4   # Use the super key as the main modifier
+# Mod=Mod1    # Use alt as the main modifier
+Mod=Mod4   # Use the super key as the main modifier
 
 #hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-q spawn /home/seb22/bashscripts/herbstquit.sh
@@ -25,7 +25,7 @@ hc keybind $Mod-Shift-c close
 #hc keybind $Mod-Return spawn xterm
 hc keybind $Mod-Return spawn urxvt
 hc keybind $Mod-w spawn firefox
-hc keybind $Mod-d spawn rofi -modi drun -show drun
+hc keybind $Mod-p spawn rofi -modi drun -show drun
 hc keybind $Mod-Shift-s spawn /home/seb22/bashscripts/dmenu_symbols.sh
 hc keybind $Mod-Shift-p spawn /home/seb22/bashscripts/pauseplay.sh
 hc keybind $Mod-Shift-x spawn /home/seb22/bashscripts/books.sh
@@ -99,7 +99,7 @@ hc keybind $Mod-r remove
 hc keybind $Mod-space cycle_layout 1
 hc keybind $Mod-s floating toggle
 hc keybind $Mod-f fullscreen toggle
-hc keybind $Mod-p pseudotile toggle
+# hc keybind $Mod-p pseudotile toggle
 
 # mouse
 hc mouseunbind --all
@@ -182,3 +182,4 @@ fi
 hc keybind $Mod-z cycle_value always_show_frame 0 1
 hc keybind $Mod-g cycle_value frame_gap 18 4
 hc keybind $Mod-t spawn /home/seb22/bashscripts/twitch.sh
+xmodmap ~/.xmodmaprc
