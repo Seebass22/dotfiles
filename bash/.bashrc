@@ -73,7 +73,7 @@ fi
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    # alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -125,87 +125,122 @@ fi
 # try this alternative.
 #setsid wal -r
 
-#add ruby gems to path
-#export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-#export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-#export GEM_PATH=$HOME/.gem
-
 export PATH="${PATH}:${HOME}/.local/bin/"
 
+export VISUAL=nvim
 export EDITOR=nvim
+
+# colorful manpages
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 #export PDFVIEWER=zathura
 
 #more aliases
-alias v='nvim'
 alias nf='clear && neofetch'
 alias remove='~/bashscripts/remove.sh'
-alias showfilesize='~/bashscripts/showfilesize.sh'
-alias showip='~/bashscripts/showip.sh'
-alias cheat='~/bashscripts/cheat.sh'
-alias info='info --vi-keys'
-alias jump='cd "$(cat ~/.jump)"'
-alias jtemp='cd "$(cat ~/.jump2)"'
-alias gj='echo $(pwd -P) > ~/.jump'
-alias n='ncmpcpp'
-alias quiz='nvim -R ~/Documents/C/Quiz/quiz.c'
-alias themes='~/bashscripts/walthemes.sh'
+
+# one letter aliases
+alias s='~/bashscripts/scrotclip.sh'
+alias g='~/bashscripts/get_songkey.sh'
+alias mz='cd ~/Downloads; ~/bashscripts/musiczip.sh *.zip; cd music; ranger'
+
+alias pdf='~/bashscripts/pdf.sh'
+alias png='~/bashscripts/png.sh'
 alias chtheme='~/bashscripts/chtheme.sh'
+alias copysong='~/bashscripts/copysong.sh'
+alias themes='~/bashscripts/walthemes.sh'
 alias shading='~/bashscripts/shading.sh'
 alias stopbg='pkill -9 xwinwrap'
-alias weather='cat /tmp/weatherfile'
+alias weather='~/bashscripts/weather.sh'
 alias graph='git log --all --decorate --oneline --graph'
 alias addsong='mpc current >> ~/Documents/notes/songs'
 alias dirzip='~/bashscripts/dirzip.sh'
 alias musiczip='~/bashscripts/musiczip.sh'
-alias mz='cd ~/Downloads; ~/bashscripts/musiczip.sh *.zip; cd music; ranger'
-alias i3screenshot='~/bashscripts/i3screenshot.sh'
-alias emoji='~/Downloads/emoji.sh'
-alias s='~/bashscripts/scrotclip.sh'
-alias book='~/bashscripts/books.sh'
-alias pdf='~/bashscripts/pdf.sh'
-alias png='~/bashscripts/png.sh'
-alias p='~/bashscripts/png.sh'
 alias discoverip='~/bashscripts/showhosts.sh'
-alias mpvmono='mpv --audio-channels=mono'
-alias m='octave --no-gui'
-alias mp='octave --no-gui --persist'
 alias yt='~/bashscripts/yt.sh'
-alias twitch='~/bashscripts/twitch.sh'
-alias fixdisplay='~/bashscripts/fixdisplay.sh'
-alias zips='~/bashscripts/zips.sh'
+alias fixtablet='~/bashscripts/fix_stuff/fix_tablet.sh'
+alias zips='~/bashscripts/zips_in_download_dir.sh'
 alias hc='herbstclient'
-alias startgnome='~/bashscripts/startgnome.sh'
-alias update='flatpak update && sudo dnf upgrade'
-alias fehclip='~/bashscripts/feh_clipboard.sh'
+alias musicstatus='~/bashscripts/musicstatus.sh'
+alias getsongkey='~/bashscripts/get_songkey.sh'
+alias downloadsong='~/bashscripts/download_song.sh'
+alias notes='nvim ~/Documents/linux_notes/Index.org'
+alias cleartrash='rm -rf ~/.trash/*'
+alias gimp='flatpak run org.gimp.GIMP'
+alias publicip='curl ipinfo.io/ip'
 
 alias music='cd /mnt/D/music/bandcamp'
-alias mathe='cd ~/Documents/uni/mathe/'
-alias Info='cd ~/Documents/uni/info/3_Semester/ue/Info3/'
-alias dt='cd ~/Documents/uni/dt/resources/'
-alias em='cd ~/Documents/uni/em'
-alias es2='cd ~/Documents/uni/es2'
 alias harmonica='cd ~/Documents/harmonica/'
-alias calligraphy='cd ~/Documents/calligraphy/'
+alias keys='cd ~/Documents/harmonica/keys/'
+alias uni='cd ~/Documents/uni/; cd $(fd -d 1| fzf)'
 
-alias stundenplan='zathura --fork ~/Documents/stundenplan.pdf >/dev/null 2>&1'
+alias irish='~/bashscripts/personal/irish_harmonica.sh'
+alias brendan='~/bashscripts/personal/irish_harmonica.sh'
+alias dummies='~/bashscripts/personal/dummies.sh'
+alias circle='feh ~/Pictures/circle-5th.png & disown 2>/dev/null'
+alias calc='setsid libreoffice *.ods >/dev/null 2>&1'
+alias spotify='~/bashscripts/spot.sh'
+alias ff_volume='~/bashscripts/fix_stuff/set_firefox_volume.sh'
+alias killpulse='~/bashscripts/personal/killpulse.sh'
 
-alias yu='pip install --user --upgrade youtube-dl'
+alias steamscreenshots='cd /home/seb22/.steam/steam/userdata/83024340/760/remote'
+alias steamscreenshotswin='cd /mnt/D/games/steam/userdata/83024340/760/remote'
+
 alias y='mpv $(xclip -selection c -out)'
 alias ya='mpv --no-video $(xclip -selection c -out)'
+alias ymp3='youtube-dl -f bestaudio -x --audio-format mp3 $(xclip -selection c -out)'
+alias ymusic='youtube-dl -f bestaudio $(xclip -selection c -out)'
+alias ycookie='youtube-dl --cookies /home/seb22/Downloads/tmp/cookies/newcookie.txt'
+alias record_vl='~/bashscripts/personal/record_VL.sh'
 
-alias gdb='gdb -q'
-alias dab='~/Documents/useless_stuff/dab.sh'
-alias doubt='cat ~/Documents/useless_stuff/doubt'
-alias tf2='steam steam://rungameid/440'
-alias pony='mpv http://208.113.165.40:8000/pvfmopus.ogg'
+alias ur='setsid -f urxvt -xrm "URxvt.font: xft:spleen:size=12" 2>&1 > /dev/null'
+alias ur2='setsid -f urxvt -xrm "URxvt.font: xft:spleen:size=5" 2>&1 > /dev/null'
 
-alias ffprobe='ffprobe -hide_banner'
-#vi intead of neovim for cool retro term
+alias playrandom='~/bashscripts/random_song.sh'
+alias rasp-ip='~/bashscripts/showhosts.sh | grep raspberry | grep -Eo "[0-9]{3}\.[0-9]{3}\.[0-9]\.[0-9]{3}"'
+alias worktracker='~/Documents/python/worktracker/worktracker.py'
+
+alias bjs='bundle exec jekyll serve'
+
+# s = startx if using tty
 case "$TERM" in
     linux) alias s='startx';;
 esac
 
 source /usr/share/fzf/shell/key-bindings.bash
-source /usr/share/bash-completion/completions/fzf
+# source /usr/share/bash-completion/completions/fzf
 
-peek() { tmux split-window -p 33 "$EDITOR" "$@" || exit; }
+# upload to transfer.sh
+transfer() {
+	if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
+	tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile;
+	echo
+}
+
+# run in background
+sid(){
+	setsid $@ >/dev/null 2>&1
+}
+
+cut_silence(){
+	auto-editor "$@" --video_codec libx264 --no_open
+}
+
+only_silence(){
+	auto-editor "$@" --video_codec libx264 --edit_based_on not_audio --frame_margin 0 --min_clip_length 1
+}
+
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+PATH="${PATH}:${HOME}/.cargo/bin"
+
+if [ -n "$INSIDE_EMACS" ]; then
+	alias v='emacsclient -n'
+	export EDITOR='emacsclient -n'
+	export VISUAL='emacsclient -n'
+fi
+
+bindiff() {
+	delta <(xxd "$1") <(xxd "$2")
+}

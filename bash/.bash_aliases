@@ -13,6 +13,9 @@ alias yu='pip install --user --upgrade youtube-dl'
 alias mpvmono='mpv --audio-channels=mono'
 alias mpvjack='mpv --ao=jack'
 
+# use vi keys for gnu info
+alias info='info --vi-keys'
+
 # GNU Octave
 alias m='octave --no-gui -q'
 alias mp='octave --no-gui --persist -q'
