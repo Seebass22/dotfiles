@@ -16,11 +16,7 @@ input="${files[0]}"
 res="$(zenity --forms --title="vertical blur" --text="output resolution" --add-entry="horizontal resolution" --add-entry="vertical resolution")"
 x="$(echo "$res" | cut -d'|' -f 1)"
 y="$(echo "$res" | cut -d'|' -f 2)"
-if [ -z "$x" ]; then
-	x=1080
-	y=1920
-fi
-if [ -z "$y" ]; then
+if [ -z "$x" ] || [ -z "$y" ]; then
 	x=1080
 	y=1920
 fi
