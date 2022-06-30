@@ -22,3 +22,4 @@ if [ -z "$x" ] || [ -z "$y" ]; then
 fi
 
 ~/bashscripts/ffmpeg/vertical_blur.sh "$input" "$output" -x "$x" -y "$y"
+notify-send 'vertical blur done'
