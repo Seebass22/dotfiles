@@ -13,5 +13,5 @@ add_underscore() {
 output="$(add_underscore ${files[0]})"
 input="${files[0]}"
 
-video4discord -i "$1" -c aac -o "$output"
+video4discord "$1" -c aac -a 128 -o "$output"
 notify-send 'video4discord done'

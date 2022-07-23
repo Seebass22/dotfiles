@@ -21,10 +21,10 @@ out="$(echo "$res" | cut -d'|' -f 3)"
 [ -z "$start" ] && [ -z "$stop" ] && [ -z "$out" ] && exit
 
 if [ -n "$start" ]; then
-	ss="-ss 00:${start}"
+	ss="-ss ${start}"
 fi
 if [ -n "$stop" ]; then
-	to="-to 00:${stop}"
+	to="-to ${stop}"
 fi
 if [ -n "$out" ]; then
 	output="$out"
@@ -32,3 +32,4 @@ fi
 
 cmd="ffmpeg -i \"\$input\" $ss $to \"\$output\""
 eval $cmd
+notify-send 'cut done'
