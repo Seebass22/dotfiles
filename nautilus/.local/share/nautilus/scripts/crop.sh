@@ -31,4 +31,4 @@ if [ -z "$yres" ]; then
 	yres=1080
 fi
 
-ffmpeg -i "$input" -filter:v "crop=${xres}:${yres}:${x}:${y}" -crf 18 "$output"
+ffmpeg -i "$input" -filter:v "crop=${xres}:${yres}:${x}:${y}" -c:a copy -crf 18 "$output"
