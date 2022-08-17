@@ -3,6 +3,26 @@
         drawable)
 
    (gimp-image-undo-group-start img)
+   (plug-in-autocrop
+    RUN-NONINTERACTIVE
+    img
+    drawable)
+
+   ;; resize canvas to be 1:1 aspect ratio,
+   ;; with just enough space for a border after resizing
+   (let* ((cur-width  (car (gimp-image-width img)))
+          (cur-height (car (gimp-image-height img)))
+          (max-size (max cur-width cur-height))
+          (factor (/  max-size 512))
+          (new-size (+ max-size (* factor 8)))
+          (x-offset (/ (- new-size cur-width) 2))
+          (y-offset (/ (- new-size cur-height) 2)))
+     (gimp-image-resize
+      img
+      new-size
+      new-size
+      x-offset
+      y-offset))
 
    (gimp-image-scale img 512 512)
    ; create new layer, duplicating the old one
