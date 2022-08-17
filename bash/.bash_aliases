@@ -6,8 +6,8 @@ alias jump='cd "$(cat ~/.jump)"'
 alias tree='exa -T'
 alias ls='exa'
 
-# update youtube-dl
-alias yu='pip install --user --upgrade youtube-dl'
+# update yt-dlp
+alias yu='pip install --user --upgrade yt-dlp'
 
 # mpv with mono audio
 alias mpvmono='mpv --audio-channels=mono'
@@ -26,10 +26,11 @@ alias gdb='gdb -q'
 
 # misc
 alias clip='xclip -selection clipboard'
-alias lscreenshot='import -window root -crop 1920x1080+0+0'
-alias rscreenshot='import -window root -crop 1920x1080+1920+0'
+alias lscreenshot='import -window root -crop 2560x1440+0+0'
+alias rscreenshot='import -window root -crop 1920x1080+2560+0'
 alias eclient='emacsclient -n'
 alias magit='emacsclient -n -e "(magit-status)"'
+alias aac='video4discord -c aac -a 128'
 
 # one letter aliases for most used programs
 alias v='nvim'
