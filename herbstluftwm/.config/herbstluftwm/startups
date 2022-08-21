@@ -10,17 +10,22 @@ herbstclient rule --label=qb --class=qutebrowser --tag=2 --focus=off --index=01
 herbstclient rule --label=music --class=URxvt --tag=2 --focus=off --index=111
 herbstclient rule --class=Steam --tag=8 --focus=off
 herbstclient rule --label=firefox --class=Firefox --tag=1 --focus=off
+herbstclient rule --label=emacs --class=Emacs --tag=3 --focus=off
 
 # herbstclient spawn urxvt $urxvtopt -e ncmpcpp
 herbstclient spawn flatpak run com.discordapp.Discord
 herbstclient spawn flatpak run org.telegram.desktop
 herbstclient spawn flatpak run im.riot.Riot
-herbstclient spawn ~/.local/bin/whatsapp
+herbstclient spawn qutebrowser
+# herbstclient spawn ~/.local/bin/whatsapp
 herbstclient spawn firefox
+herbstclient spawn emacs
 
 sleep 1
 herbstclient unrule music
+herbstclient unrule emacs
 herbstclient rule --label=cava --class=URxvt --tag=2 --focus=off --index=10111
+
 sleep 1
 herbstclient spawn urxvt $urxvtopt -e cava
 
@@ -37,7 +42,7 @@ sleep 1
 herbstclient unrule notes
 herbstclient rule --label=clock --class=URxvt --tag=2 --focus=off --index=10100
 sleep 1
-herbstclient spawn urxvt $urxvtopt -e ncmpcpp -s clock
+herbstclient spawn urxvt $urxvtopt -e rsclock
 
 sleep 0.5
 herbstclient unrule clock
@@ -51,5 +56,6 @@ herbstclient unrule circle
 sleep 20
 herbstclient unrule firefox
 
-sleep 2m
+sleep 1m
 herbstclient spawn steam
+
