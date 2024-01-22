@@ -225,3 +225,6 @@ bindiff() {
 eval "$(zoxide init bash)"
 
 alias http="python -m http.server"
+
+alias check_thesis='~/bashscripts/personal/check.pl'
+alias thesis='cd ~/Documents/master/thesis/; nvim thesis.tex'
