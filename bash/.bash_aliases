@@ -3,8 +3,8 @@ alias gj='echo $(pwd -P) > ~/.jump'
 alias jump='cd "$(cat ~/.jump)"'
 
 # replace core programs
-alias tree='exa -T'
-alias ls='exa'
+alias tree='eza -T'
+alias ls='eza'
 
 # update yt-dlp
 alias yu='pip install --user --upgrade yt-dlp'
