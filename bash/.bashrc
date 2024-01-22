@@ -151,7 +151,6 @@ alias chtheme='~/bashscripts/chtheme.sh'
 alias copysong='~/bashscripts/copysong.sh'
 alias themes='~/bashscripts/walthemes.sh'
 alias shading='~/bashscripts/shading.sh'
-alias stopbg='pkill -9 xwinwrap'
 alias weather='~/bashscripts/weather.sh'
 alias graph='git log --all --decorate --oneline --graph'
 alias addsong='mpc current >> ~/Documents/notes/songs'
@@ -163,11 +162,8 @@ alias fixtablet='~/bashscripts/fix_stuff/fix_tablet.sh'
 alias zips='~/bashscripts/zips_in_download_dir.sh'
 alias hc='herbstclient'
 alias musicstatus='~/bashscripts/musicstatus.sh'
-alias getsongkey='~/bashscripts/get_songkey.sh'
 alias downloadsong='~/bashscripts/download_song.sh'
-alias notes='nvim ~/Documents/linux_notes/Index.org'
 alias cleartrash='rm -rf ~/.trash/*'
-alias gimp='flatpak run org.gimp.GIMP'
 alias publicip='curl ipinfo.io/ip'
 
 alias music='cd /mnt/D/music/bandcamp'
@@ -175,41 +171,22 @@ alias harmonica='cd ~/Documents/harmonica/'
 alias keys='cd ~/Documents/harmonica/keys/'
 alias uni='cd ~/Documents/uni/; cd $(fd -d 1| fzf)'
 
-alias irish='~/bashscripts/personal/irish_harmonica.sh'
-alias brendan='~/bashscripts/personal/irish_harmonica.sh'
-alias dummies='~/bashscripts/personal/dummies.sh'
 alias circle='feh ~/Pictures/circle-5th.png & disown 2>/dev/null'
-alias calc='setsid libreoffice *.ods >/dev/null 2>&1'
 alias spotify='~/bashscripts/spot.sh'
 alias ff_volume='~/bashscripts/fix_stuff/set_firefox_volume.sh'
 alias killpulse='~/bashscripts/personal/killpulse.sh'
 
-alias steamscreenshots='cd /home/seb22/.steam/steam/userdata/83024340/760/remote'
-alias steamscreenshotswin='cd /mnt/D/games/steam/userdata/83024340/760/remote'
-
 alias y='mpv $(xclip -selection c -out)'
 alias ya='mpv --no-video $(xclip -selection c -out)'
-alias ymp3='youtube-dl -f bestaudio -x --audio-format mp3 $(xclip -selection c -out)'
-alias ymusic='youtube-dl -f bestaudio $(xclip -selection c -out)'
-alias ycookie='youtube-dl --cookies /home/seb22/Downloads/tmp/cookies/newcookie.txt'
-alias record_vl='~/bashscripts/personal/record_VL.sh'
+alias ymp3='yt-dlp -f bestaudio -x --audio-format mp3 $(xclip -selection c -out)'
+alias ymusic='yt-dlp -f bestaudio $(xclip -selection c -out)'
+alias ycookie='yt-dlp --cookies /home/seb22/Downloads/tmp/cookies/newcookie.txt'
 
 alias ur='setsid -f urxvt -xrm "URxvt.font: xft:spleen:size=12" 2>&1 > /dev/null'
 alias ur2='setsid -f urxvt -xrm "URxvt.font: xft:spleen:size=5" 2>&1 > /dev/null'
 
-alias playrandom='~/bashscripts/random_song.sh'
-alias rasp-ip='~/bashscripts/showhosts.sh | grep raspberry | grep -Eo "[0-9]{3}\.[0-9]{3}\.[0-9]\.[0-9]{3}"'
-alias worktracker='~/Documents/python/worktracker/worktracker.py'
-
-alias bjs='bundle exec jekyll serve'
-
-# s = startx if using tty
-case "$TERM" in
-    linux) alias s='startx';;
-esac
 
 source /usr/share/fzf/shell/key-bindings.bash
-# source /usr/share/bash-completion/completions/fzf
 
 # upload to transfer.sh
 transfer() {
@@ -245,3 +222,6 @@ fi
 bindiff() {
 	delta <(xxd "$1") <(xxd "$2")
 }
+eval "$(zoxide init bash)"
+
+alias http="python -m http.server"
