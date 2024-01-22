@@ -126,6 +126,7 @@ fi
 #setsid wal -r
 
 export PATH="${PATH}:${HOME}/.local/bin/"
+export PATH="${PATH}:${HOME}/bashscripts/ffmpeg"
 
 export VISUAL=nvim
 export EDITOR=nvim
@@ -140,7 +141,7 @@ alias nf='clear && neofetch'
 alias remove='~/bashscripts/remove.sh'
 
 # one letter aliases
-alias s='~/bashscripts/scrotclip.sh'
+alias s='~/bashscripts/screenshot_clipboard.sh'
 alias g='~/bashscripts/get_songkey.sh'
 alias mz='cd ~/Downloads; ~/bashscripts/musiczip.sh *.zip; cd music; ranger'
 
